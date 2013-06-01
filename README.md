@@ -1,3 +1,8 @@
+Using Tiny Date Formatter
+=========================
+
+> The aim of tiny date formatter is to be a simple lightweight package developers can use to easily parse date or as an education tool
+
 ```javascript
     //default
     console.log((new Date()).format('yyyy'));
@@ -37,8 +42,13 @@
 
     // parse date in 2012/2/2 format
     console.log(("2012/2/2").parse('/').format('dddd, mmmm dd, yyyy'));
+    // returns 'Thursday, February 02, 2012'
 
     // Year - Month - Day
     console.log(("2012-2-2").parse('-').format('dddd, mmmm dd, yyyy'));
+    // returns 'Thursday, February 02, 2012'
+
+    consol.elog("2012-2-2".parse('-', 'dddd, mmmm dd, yyyy'))
+    // returns 'Thursday, February 02, 2012'
 
 ```
