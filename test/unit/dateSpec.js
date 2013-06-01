@@ -56,3 +56,22 @@ describe('Testing Date.js library', function () {
         expect("2012-2-2".parse('-', 'dddd, mmmm dd, yyyy')).toBe('Thursday, February 02, 2012');
     });
 });
+
+
+describe('Test Date.js utility methods', function () {
+    'use strict';
+    it('Testing zero-fill method', function () {
+        var num = 1;
+        expect(num.zf(2)).toBe('01');
+    });
+
+    it('Testing Number substring functionality', function () {
+        var year = 2013;
+        expect(year.substr(2)).toBe('13');
+    });
+
+    it('Testing String functionality', function () {
+        expect('1'.string(3)).toBe('111');
+    });
+
+});

@@ -6,6 +6,14 @@
  *  @date : 10/11/2010
  *  @lincense : do no evil!
  *
+ *  @revision : 1/76/2013
+ *
+ *  - added jasmine test
+ *  - fixed minor bugs found during test
+ *  - cleanup arrays
+ *  - jslint file
+ *  - expand parse functionality to support parse+format
+ *
  */
 
 // a global month names array
