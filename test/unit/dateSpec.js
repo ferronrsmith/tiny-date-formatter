@@ -55,6 +55,12 @@ describe('Testing Date.js library', function () {
     it('Test Parse Functionality #2 ', function () {
         expect("2012-2-2".parse('-', 'dddd, mmmm dd, yyyy')).toBe('Thursday, February 02, 2012');
     });
+
+    it('Test Throw Exception when unknown characters gets entered', function () {
+       expect(function () {
+            "2012-2-2".parse();
+        }).toThrow(); // should throw a cannot parse exception
+    });
 });
 
 
