@@ -28,7 +28,7 @@ describe('Testing Date.js library', function () {
     });
 
     it('Test Medium Date (Full-Month Representation) conversion', function () {
-        expect(date.format('mmmm dd, yyyy')).toBe(utilDateTest('fmonth', date));
+        expect(date.format('mmmm dd, yyyy')).toBe(utilDateTest('ffmonth', date));
     });
 
     it('Test Full Date conversion', function () {
@@ -105,6 +105,9 @@ function utilDateTest(form, date) {
         return gsDayNames[date.getDay()] + ", " + gsMonthNames[date.getMonth()] + " " +
             date.getDate().zf(2) + ", " + date.getFullYear();
     } else if (form === 'fmonth') {
+        return gsMonthNames[date.getMonth()].substr(0, 3) + " " +
+            date.getDate().zf(2) + ", " + date.getFullYear();
+    } else if (form === 'ffmonth') {
         return gsMonthNames[date.getMonth()] + " " +
             date.getDate().zf(2) + ", " + date.getFullYear();
     } else if (form === 'sdate') {
@@ -112,7 +115,7 @@ function utilDateTest(form, date) {
     } else if (form === 'year') {
         return date.getFullYear().toString();
     } else if (form === 'default') {
-        return gsMonthNames[date.getMonth()] + " " +
+        return gsMonthNames[date.getMonth()].substr(0, 3) + " " +
             date.getDate().zf(2) + " " + date.getFullYear().substr(2) + " " +
             date.getHours().zf(2) + ":" + date.getMinutes().zf(2) + ":" +
             date.getSeconds().zf(2) + " " +
