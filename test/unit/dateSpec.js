@@ -93,29 +93,29 @@ describe('Test Date.js utility methods', function () {
  */
 function utilDateTest(form, date) {
     if(form === 'short') {
-       return date.getFullYear() + "-" + (date.getMonth()+1).zf(2) + "-" + date.getDate();
+       return date.getFullYear() + "-" + (date.getMonth()+1).zf(2) + "-" + date.getDate().zf(2);
     } else if (form  === 'smed') {
-        return date.getHours() + ":" + date.getMinutes() + ":" +
-            date.getSeconds() + " " +
+        return date.getHours().zf(2) + ":" + date.getMinutes().zf(2) + ":" +
+            date.getSeconds().zf(2) + " " +
             (date.getHours() < 12 ? 'am' : 'pm');
     } else if (form === 'stime') {
-        return date.getHours() + ":" + date.getMinutes() + " " +
+        return date.getHours().zf(2) + ":" + date.getMinutes().zf(2) + " " +
             (date.getHours() < 12 ? 'am' : 'pm');
     } else if (form === 'fdate') {
         return gsDayNames[date.getDay()] + ", " + gsMonthNames[date.getMonth()] + " " +
-            date.getDate() + ", " + date.getFullYear();
+            date.getDate().zf(2) + ", " + date.getFullYear();
     } else if (form === 'fmonth') {
         return gsMonthNames[date.getMonth()] + " " +
-            date.getDate() + ", " + date.getFullYear();
+            date.getDate().zf(2) + ", " + date.getFullYear();
     } else if (form === 'sdate') {
-        return (date.getMonth()+1).zf(2) + "/" + date.getDate() + "/" + date.getFullYear().substr(2);
+        return (date.getMonth()+1).zf(2) + "/" + date.getDate().zf(2) + "/" + date.getFullYear().substr(2);
     } else if (form === 'year') {
         return date.getFullYear().toString();
     } else if (form === 'default') {
         return gsMonthNames[date.getMonth()] + " " +
-            date.getDate() + " " + date.getFullYear().substr(2) + " " +
-            date.getHours() + ":" + date.getMinutes() + ":" +
-            date.getSeconds() + " " +
+            date.getDate().zf(2) + " " + date.getFullYear().substr(2) + " " +
+            date.getHours().zf(2) + ":" + date.getMinutes().zf(2) + ":" +
+            date.getSeconds().zf(2) + " " +
             (date.getHours() < 12 ? 'am' : 'pm');
     }
 
