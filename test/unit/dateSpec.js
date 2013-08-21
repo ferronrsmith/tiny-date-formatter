@@ -2,7 +2,13 @@
 
 describe('Testing Date.js library', function () {
     'use strict';
-    var date = new Date(1370072749148);
+
+    //Update : Added this specific bit of code to resolve the timezone difference between
+    // the CI server and my local machine pre-fixed date
+    var _date = new Date(1370072749148);
+    var _userOffset = _date.getTimezoneOffset()*60*1000; // user's offset time
+    var _centralOffset = 240*60*1000; // 4 for AST - use whatever you need
+    var date = new Date(_date.getTime() - _userOffset + _centralOffset);
 
     it('Test Year conversion', function () {
         expect(date.format('yyyy')).toBe('2013');
