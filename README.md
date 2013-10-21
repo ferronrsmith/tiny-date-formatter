@@ -52,3 +52,7 @@ Using Tiny Date Formatter
     // returns 'Thursday, February 02, 2012'
 
 ```
+
+[![Coverage Status](https://coveralls.io/repos/ferronrsmith/tiny-date-formatter/badge.png)](https://coveralls.io/r/ferronrsmith/tiny-date-formatter)
+
+[![Build Status](https://travis-ci.org/ferronrsmith/tiny-date-formatter.png?branch=master)](https://travis-ci.org/ferronrsmith/tiny-date-formatter)
