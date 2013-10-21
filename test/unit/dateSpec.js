@@ -59,13 +59,16 @@ describe('Testing Date.js library', function () {
         expect("2012-2-2".parse('-', 'dddd, mmmm dd, yyyy')).toBe('Thursday, February 02, 2012');
     });
 
+    it('Test Parse Functionality #3 ', function () {
+        expect("2012-2-2".parse('-', 'ddd, mmmm dd, yyyy')).toBe('Thu, February 02, 2012');
+    });
+
     it('Test Throw Exception when unknown characters gets entered', function () {
        expect(function () {
             "2012-2-2".parse();
         }).toThrow(); // should throw a cannot parse exception
     });
 });
-
 
 describe('Test Date.js utility methods', function () {
     'use strict';

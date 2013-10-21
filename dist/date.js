@@ -27,9 +27,6 @@ var gsDayNames = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Frida
 // the date format prototype
 Date.prototype.format = function (f) {
     'use strict';
-    if (!this.valueOf()) {
-        return ' ';
-    }
     var d = this;
 
     return f.replace(/(yyyy|yy|mmmm|mmm|mm|m|dddd|ddd|dd|hh|ss|a\/p)/gi,
@@ -59,8 +56,6 @@ Date.prototype.format = function (f) {
                 return d.getSeconds().zf(2);
             case 'a/p':
                 return d.getHours() < 12 ? 'am' : 'pm';
-            default:
-                throw new Error('Unsupported Characters Detected');
             }
         }
         );
